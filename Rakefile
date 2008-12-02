@@ -9,6 +9,8 @@ Echoe.new('i18n-online', '0.1.0') do |p|
   p.email = "matholroyd+rails@gmail.com"
   p.ignore_pattern = ["tmp/*", "script/*"]
   p.development_dependencies = []
+  p.clean_pattern.reject! {|i| i == 'lib/*-*' }
 end
  
 Dir["#{File.dirname(__FILE__)}/tasks/*.rake"].sort.each { |ext| load ext}
+
